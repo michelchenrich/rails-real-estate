@@ -1,0 +1,4 @@
+.btn-group
+  = link_to 'Show', paths[:show], class: 'btn btn-default'
+  = link_to 'Edit', paths[:edit], class: 'btn btn-primary'
+  = link_to 'Delete', paths[:delete], :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'

@@ -1,0 +1,18 @@
+= content_for :heading do
+  Listing rentals
+
+= link_to 'New Rental', new_rental_path, class: 'btn btn-primary', role: 'button'  
+
+%table.table
+  %thead
+    %tr
+      %th Property
+      %th Price
+      %th Actions
+
+  %tbody
+    - @rentals.each do |rental|
+      %tr
+        %td= rental.property.summary
+        %td= rental.price
+        %td= render 'actions_menu', paths: { show: rental, edit: edit_rental_path(rental), delete: rental }

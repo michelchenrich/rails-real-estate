@@ -1,0 +1,11 @@
+= bootstrap_form_for @address do |f|
+  .field
+    = f.select :city_id, options_for_select(@address.possible_cities, @address.city_id)
+  .field
+    = f.text_field :street
+  .field
+    = f.text_field :zip_code
+  .actions
+    .btn-group
+      = f.submit 'Save'
+      = link_to 'Cancel', addresses_path, class: 'btn btn-danger'

@@ -1,0 +1,23 @@
+= bootstrap_form_for @property do |f|
+  .field
+    = f.select :address_id, options_for_select(@property.possible_addresses, @property.address_id)
+  .field
+    = f.number_field :bedrooms
+  .field
+    = f.number_field :garages
+  .field
+    = f.text_field :private_area
+  .field
+    = f.text_field :public_area
+  .field
+    = f.check_box :party_area
+  .field
+    = f.check_box :security
+  .field
+    = f.check_box :public_patio
+  .field
+    = f.check_box :public_pool
+  .actions
+    .btn-group
+      = f.submit 'Save'
+      = link_to 'Cancel', properties_path, class: 'btn btn-danger'

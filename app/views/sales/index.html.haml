@@ -1,0 +1,18 @@
+= content_for :heading do 
+  Listing sales
+
+= link_to 'New Sale', new_sale_path, class: 'btn btn-primary'
+ 
+%table.table
+  %thead
+    %tr
+      %th Property
+      %th Price
+      %th Actions
+
+  %tbody
+    - @sales.each do |sale|
+      %tr
+        %td= sale.property.summary
+        %td= sale.price
+        %td= render 'actions_menu', paths: { show: sale, edit: edit_sale_path(sale), delete: sale }

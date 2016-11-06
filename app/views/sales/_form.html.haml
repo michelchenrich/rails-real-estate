@@ -1,0 +1,9 @@
+= bootstrap_form_for @sale do |f|
+  .field
+    = f.select :property_id, options_for_select(@sale.possible_properties, @sale.property_id)
+  .field
+    = f.text_field :price
+  .actions
+    .btn-group
+      = f.submit 'Save'
+      = link_to 'Cancel', sales_path, class: 'btn btn-danger'

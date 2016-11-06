@@ -1,0 +1,7 @@
+= bootstrap_form_for @city do |f|
+  .field
+    = f.text_field :name
+  .actions
+    .btn-group
+      = f.submit 'Save'
+      = link_to 'Cancel', cities_path, class: 'btn btn-danger'

@@ -1,0 +1,9 @@
+= bootstrap_form_for @rental do |f|
+  .field
+    = f.select :property_id, options_for_select(@rental.possible_properties, @rental.property_id)
+  .field
+    = f.text_field :price
+  .actions
+    .btn-group
+      = f.submit 'Save'
+      = link_to 'Cancel', rentals_path, class: 'btn btn-danger'

@@ -1,0 +1,22 @@
+= content_for :heading do
+  Listing properties
+
+= link_to 'New Property', new_property_path, class: 'btn btn-primary'
+
+%table.table
+  %thead
+    %tr
+      %th Id
+      %th Address
+      %th Bedrooms
+      %th Total area
+      %th Actions
+
+  %tbody
+    - @properties.each do |property|
+      %tr
+        %td= property.id
+        %td= property.address.summary
+        %td= property.bedrooms
+        %td= property.total_area
+        %td= render 'actions_menu', paths: { show: property, edit: edit_property_path(property), delete: property } 

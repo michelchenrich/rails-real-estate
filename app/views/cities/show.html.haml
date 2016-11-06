@@ -1,0 +1,13 @@
+= content_for :heading do
+  Display city
+%p
+  %b Name:
+  = @city.name
+%p
+  %b Properties:
+  %ul
+    - @city.properties.each do |property|
+      %li= link_to property.summary, property 
+.btn-group
+  = link_to 'Edit', edit_city_path(@city), class: 'btn btn-default'
+  = link_to 'Back', cities_path, class: 'btn btn-primary' 

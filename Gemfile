@@ -19,6 +19,7 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
+gem 'bootstrap_form'
 gem 'haml-rails'
 gem 'high_voltage'
 group :development do

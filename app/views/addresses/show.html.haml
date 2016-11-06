@@ -1,0 +1,14 @@
+= content_for :heading do
+  Display address
+%p
+  %b City:
+  = @address.city.name
+%p
+  %b Street:
+  = @address.street
+%p
+  %b Zip code:
+  = @address.zip_code
+.btn-group
+  = link_to 'Edit', edit_address_path(@address), class: 'btn btn-default'
+  = link_to 'Back', addresses_path, class: 'btn btn-primary' 

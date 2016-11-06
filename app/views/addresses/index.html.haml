@@ -1,0 +1,20 @@
+= content_for :heading do
+  Listing addresses
+
+= link_to 'New Address', new_address_path, class: 'btn btn-primary' 
+
+%table.table
+  %thead
+    %tr
+      %th City
+      %th Street
+      %th Zip code
+      %th Actions
+
+  %tbody
+    - @addresses.each do |address|
+      %tr
+        %td= address.city.name
+        %td= address.street
+        %td= address.zip_code
+        %td= render 'actions_menu', paths: { show: address, edit: edit_address_path(address), delete: address }

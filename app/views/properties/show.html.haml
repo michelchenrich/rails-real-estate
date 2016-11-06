@@ -1,0 +1,37 @@
+= content_for :heading do
+  Display property
+%p
+  %b Address:
+  = link_to @property.address.summary, @property.address
+%p
+  %b Bedrooms:
+  = @property.bedrooms
+%p
+  %b Garages:
+  = @property.garages
+%p
+  %b Private area:
+  = @property.private_area
+%p
+  %b Public area:
+  = @property.public_area
+- unless @property.rental.nil?
+  %p
+    %b Rental price:
+    = @property.rental.price
+- unless @property.sale.nil?
+  %p
+    %b Sale price:
+    = @property.sale.price
+%p
+  - if @property.party_area
+    %span.label.label-success Party Area
+  - if @property.security
+    %span.label.label-success Security 
+  - if @property.public_patio
+    %span.label.label-success Public Patio
+  - if @property.public_pool
+    %span.label.label-success Public Pool 
+.btn-group
+  = link_to 'Edit', edit_property_path(@property), class: 'btn btn-default'
+  = link_to 'Back', properties_path, class: 'btn btn-primary' 

@@ -1,0 +1,11 @@
+= content_for :heading do
+  Display rental
+%p
+  %b Property:
+  = @rental.property.summary
+%p
+  %b Price:
+  = @rental.price
+.btn-group
+  = link_to 'Edit', edit_rental_path(@rental), class: 'btn btn-default'
+  = link_to 'Back', rentals_path, class: 'btn btn-primary' 

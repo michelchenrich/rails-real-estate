@@ -1,0 +1,16 @@
+= content_for :heading do
+  Listing cities
+
+= link_to 'New City', new_city_path, class: 'btn btn-primary'
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Actions
+
+  %tbody
+    - @cities.each do |city|
+      %tr
+        %td= city.name
+        %td= render 'actions_menu', paths: { show: city, edit: edit_city_path(city), delete: city }

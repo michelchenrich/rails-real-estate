@@ -1,0 +1,11 @@
+= content_for :heading do
+  Display sale
+%p
+  %b Property:
+  = @sale.property.summary
+%p
+  %b Price:
+  = @sale.price
+.btn-group
+  = link_to 'Edit', edit_sale_path(@sale), class: 'btn btn-default'
+  = link_to 'Back', sales_path, class: 'btn btn-primary' 
